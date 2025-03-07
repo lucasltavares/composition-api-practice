@@ -1,17 +1,28 @@
 <script setup>
+import { usePostsStore } from '@/stores/posts';
+
+const postsStore = usePostsStore();
+
 defineProps({
     post: {
         type: Object,
         required: true
     }
 })
+
+const emit = defineEmits(['get-id'])
+
+const getId = (id) => {
+  emit('get-id', id);
+}
 </script>
 <template>
+  <button @click="getId(post.id)">Click to get id</button>
     <div class="header">
       <span>Written by {{ post.author }} on {{ post.created_at }}</span>
       <div>
-        <button @click="deletePost(post.id)" class="del material-icons">delete</button>
-        <button class="save material-icons">bookmark_border</button>
+        <button @click="postsStore.deletePost(post.id)" class="del material-icons">delete</button>
+        <button @click="postsStore.savePost(post.id)" class="save material-icons">{{ post.is_saved ? 'bookmark' : 'bookmark_border' }}</button>
       </div>
     </div>
     <h1>{{ post.title }}</h1>

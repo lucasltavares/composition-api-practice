@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": "5",
+      "title": "Boas Práticas no Laravel",
+      "body": "Dicas essenciais para manter seu código Laravel limpo, seguro e eficiente.",
+      "author": "Carlos Ferreira",
+      "created_at": "2024-03-02T22:10:00Z",
+      "is_saved": false
+    },
+    {
+      "id": "3",
+      "title": "DFDSFSF",
+      "body": "DSFDSFDFDS",
+      "author": "Lucas Lima",
+      "created_at": "2025-03-11T13:50:38.358Z",
+      "is_saved": true
+    }
+  ]
+}
